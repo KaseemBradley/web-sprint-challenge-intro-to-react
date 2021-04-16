@@ -2,29 +2,36 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import { CHAR_URL } from './index';
+import Character from './components/Character';
 
 const App = () => {
- const [charData, setCharData] = useState(null);
+ const [charData, setCharData] = useState([]);
 
  useEffect(() => {
-  const fetchData = () => {
+  
   axios
    .get(CHAR_URL)
    .then(res => {
      setCharData(res.data);
    })
    .catch(err => {
-     return err;
+     console.log(err)
    });
-};
-  
-fetchData();
 
  }, []);
+
+
+ console.log(charData);
+
+
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+       {charData.map(item => {
+         return <Character key={item.name} name={item.name} />
+       })}
+      
     </div>
   );
 }

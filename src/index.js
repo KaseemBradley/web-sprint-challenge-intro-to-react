@@ -7,6 +7,6 @@ import App from "./App";
 import { worker } from "./mocks/browser";
 worker.start();
 
-export const CHAR_URL = 'https://swapi.dev/api/people/';
+export const CHAR_URL = 'https://swapi.dev/api/people';
 
 ReactDOM.render(<App />, document.getElementById("root"));
