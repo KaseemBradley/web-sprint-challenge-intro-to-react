@@ -6,10 +6,10 @@ const {name, height, mass, birthYear} = props;
 
 return (
     <div>
-        <h3>{name}</h3>
-        {/* <p>`Height: ${height}`</p>
-        <p>`Mass: ${mass}`</p>
-        <p>`Birth Year: ${birthYear}`</p> */}
+        <h4>Name: {name}</h4>
+        <p>Height: {height}</p>
+        <p>Mass: {mass}</p>
+        <p>Birth Year: {birthYear}</p>
     </div>
 );
 };

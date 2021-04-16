@@ -28,8 +28,8 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-       {charData.map(item => {
-         return <Character key={item.name} name={item.name} />
+       {charData.map(charArray => {
+         return <Character key={charArray.name} name={charArray.name} />
        })}
       
     </div>
