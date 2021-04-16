@@ -4,20 +4,20 @@ import styled from 'styled-components';
 
 
 const StyledCharacter = styled.div`
-    color: red;
+    color: ${pr => pr.theme.primaryColor};
 `
 
 
 
 
-const Character = ({charData, height, mass, birthYear}) => {
+const Character = ({charData}) => {
  
 return (
     <StyledCharacter>
         <h4>Name: {charData.name}</h4>
-        <p>Height: {height}</p>
-        <p>Mass: {mass}</p>
-        <p>Birth Year: {birthYear}</p>
+        <p>Height: {charData.height}</p>
+        <p>Mass: {charData.mass}</p>
+        <p>Birth Year: {charData.birthYear}</p>
     </StyledCharacter>
 );
 };

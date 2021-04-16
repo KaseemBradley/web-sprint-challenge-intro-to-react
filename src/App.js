@@ -4,6 +4,10 @@ import axios from 'axios';
 import { CHAR_URL } from './index';
 import Character from './components/Character';
 
+
+
+
+
 const App = () => {
  const [charData, setCharData] = useState([]);
 
@@ -25,19 +29,12 @@ useEffect(fetchChars, [])
 
 
 
- console.log(charData);
-
-
-
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
        {charData.map(charArray => {
          return <Character key={charArray.name} 
-         charData={charArray} 
-         height={charArray.height}
-         mass={charArray.mass}
-         birthYear={charArray.birth_year} />
+         charData={charArray} />
        })}
       
     </div>

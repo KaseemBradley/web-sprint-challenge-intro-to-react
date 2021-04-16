@@ -1,5 +1,5 @@
 //Themes
 
 export default {
-    primaryColor: '#FFE81F'
+    primaryColor: '#FFE81F',
 }
