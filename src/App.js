@@ -7,8 +7,8 @@ import Character from './components/Character';
 const App = () => {
  const [charData, setCharData] = useState([]);
 
- useEffect(() => {
-  
+
+  const fetchChars = () => {
   axios
    .get(CHAR_URL)
    .then(res => {
@@ -17,8 +17,12 @@ const App = () => {
    .catch(err => {
      console.log(err)
    });
+}
 
- }, []);
+useEffect(fetchChars, [])
+  
+
+
 
 
  console.log(charData);
@@ -29,7 +33,11 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
        {charData.map(charArray => {
-         return <Character key={charArray.name} name={charArray.name} />
+         return <Character key={charArray.name} 
+         charData={charArray} 
+         height={charArray.height}
+         mass={charArray.mass}
+         birthYear={charArray.birth_year} />
        })}
       
     </div>
