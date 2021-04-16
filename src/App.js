@@ -7,7 +7,8 @@ const App = () => {
  const [charData, setCharData] = useState(null);
 
  useEffect(() => {
-   axios
+  const fetchData = () => {
+  axios
    .get(CHAR_URL)
    .then(res => {
      setCharData(res.data);
@@ -15,6 +16,9 @@ const App = () => {
    .catch(err => {
      return err;
    });
+};
+  
+fetchData();
 
  }, []);
 
